@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Snapshot with children as Submit 1`] = `
+<button
+  className="bg-primary hover:opacity-75 text-white font-bold rounded py-2 px-4 text-xs mr-2"
+  data-testid="button"
+  type="primary"
+>
+  Submit
+</button>
+`;
+
+exports[`Button Snapshot with type primary  1`] = `
+<button
+  className="bg-primary hover:opacity-75 text-white font-bold rounded py-2 px-4 text-xs mr-2"
+  data-testid="button"
+  type="primary"
+/>
+`;
+
+exports[`Button snapshot for sizes 1`] = `
+<button
+  className="bg-primary hover:opacity-75 text-white font-bold rounded py-2 px-4 text-xs mr-2"
+  data-testid="button"
+  size="sm"
+  type="primary"
+>
+  Submit
+</button>
+`;

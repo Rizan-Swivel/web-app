@@ -1,0 +1,42 @@
+name: s3-deployment-qa
+
+on:
+  push:
+    branches:
+      - 3.0RC
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: 
+      CI: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure AWS CredentialsUpdate
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Build React App
+        run: |
+          npm install postcss -g
+          yarn
+          yarn build:qa
+          ls -lha
+      - name: Deploy qpon app build to S3 bucket and invalidate cloudfront cache
+        run: |
+           aws s3 sync ./build/ s3://frontend-qpon-qa --delete
+           aws cloudfront create-invalidation --distribution-id E1S1R0H0G2MLDF --paths "/*"
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: iRoachie/slack-github-actions@v2.3.0
+        with:
+          status: ${{ job.status }}
+        env:
+          ##SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

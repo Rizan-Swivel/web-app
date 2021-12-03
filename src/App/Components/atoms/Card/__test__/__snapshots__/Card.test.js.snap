@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card snapshot 1`] = `
+<card
+  className="border border-gray-400 flex flex-col p-4 rounded shadow undefined mr-2"
+>
+  Submit
+</card>
+`;

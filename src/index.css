@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.bg-gradient {
+  background-color: #e7545c;
+  background-image: linear-gradient(315deg, #FF5A5F 0%, #FF5A5F 74%);
+}
+
+.btn-facebook {
+  background-color: #39529a;
+}
+
+.btn-google {
+  background-color: #ea4435;
+}
+
+.file__manger-img {
+  display: flex;
+  justify-content: center;
+}
+
+.file__manger-img img {
+  height: 250px;
+}
+
+/* edit table css overide begin */
+
+.rdt_TableRow:nth-child(odd) {
+  background: #fbfbfb;
+}
+
+.Dropdown-root .Dropdown-control {
+  border: 2px solid #4a4a4a;
+}
+
+/* edit table css overide end */

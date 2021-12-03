@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+
+    .login-page img {
+        border-radius: 25px;
+        width: 58%;
+    }
+
+    .signIn-bttn button{
+        border-radius: 8px;
+        padding: 14px 0;
+        font-size: 14px;
+    }
+
+    #left-scollbar a.sidepanel-logo {    
+        margin: 0;
+        display: inline-block;
+        padding: 5% 0;
+    }
+
+    #left-scollbar a.sidepanel-logo img{ 
+        width: 68%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #left-scollbar button .btn{
+        height: 50px;
+        width:100%;
+    }
+
+    #left-scollbar ul li,
+    #left-scollbar button .btn
+     {
+        position: relative;	
+        text-transform: uppercase;
+        transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+        cursor: pointer;
+        user-select: none;
+        border-top: 1px solid rgba(255, 255, 225, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 225, 0.2);
+    }
+
+    #left-scollbar ul li:hover, #left-scollbar ul li a:focus ,
+    .panel-RequestADeal button .btn:hover, .panel-RequestADeal button .btn a:focus,
+    .panel-Reports button .btn:hover, .panel-Reports button .btn a:focus  {
+        transition-delay: .18s;
+        background-color:#fc3838;
+    }
+
+    
+    #left-scollbar .relative:before, 
+    #left-scollbar .relative:after,
+    #left-scollbar .btn-effect:before, 
+    #left-scollbar .btn-effect:after {
+        top: 0;
+        width: 0;
+        height: 100%;
+    }
+
+    #left-scollbar .relative:before, #left-scollbar button .btn-effect:before,
+    #left-scollbar button .btn-effect:before
+     {
+        right: 0;
+        border: 1px solid #ffffff;
+        border-left: 0;
+        border-right: 0;	
+    }
+
+    #left-scollbar .panel-RequestADeal.relative:before, 
+    #left-scollbar .panel-Reports.relative:before{
+        border:none;
+    }
+
+    #left-scollbar .relative:after,
+    #left-scollbar .btn-effect:after {
+        left: 0;
+    }
+
+    #left-scollbar .relative:hover:before,
+    #left-scollbar .relative:hover:after,
+    #left-scollbar .btn-effect:hover:before,
+    #left-scollbar .btn-effect:hover:after {
+        width: 100%;
+    }
+
+
+    #left-scollbar ul li:hover::before,
+    #left-scollbar button .btn:hover::before {
+        transition-delay: 0s;
+    }
+
+    #left-scollbar ul li:hover::after,
+    #left-scollbar button .btn:hover::after {
+        background:#fc3838;
+        transition-delay: .35s;
+    }
+
+    li.panel-RequestADeal:hover::after,
+    li.panel-Reports:hover::after {
+        background:none !important;
+    }
+
+    #left-scollbar ul .panel-RequestADeal:hover, #left-scollbar ul .panel-RequestADeal:hover,
+    #left-scollbar ul .panel-Reports:hover,  #left-scollbar ul .panel-Reports:hover {
+        background:none;
+    }
+
+    #left-scollbar ul li span.bg-img{
+        padding-left: 45px;
+        height: 24px;
+        display: inline-block;
+    }
+
+    #left-scollbar ul ul { 
+        box-shadow: none;
+        margin-left: -1.5rem;
+        margin-top: 0;
+    }
+
+    #left-scollbar ul ul li{
+        border-bottom: none;
+        margin: 0; 
+        transition: all .5s; 
+        height: 50px;
+        padding-right: 0;
+        transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+    }
+
+    #left-scollbar ul li:after, 
+    #left-scollbar ul li:before,
+    #left-scollbar button .btn:after, 
+    #left-scollbar button .btn:before  {
+        content: '';
+        position: absolute;	
+        transition: inherit;
+        z-index: -1;
+	}
+
+
+    #left-scollbar ul ul li a{
+        padding: 0.75rem 0 0.75rem 7em;
+        display: block;
+        height: 50px;
+    }
+
+    .panel-RequestADeal, .panel-Reports{
+        background: none;
+        padding: 0;
+        margin: 0;
+        transition: none !important;
+    }
+
+    .panel-RequestADeal button .btn,
+    .panel-Reports button .btn {
+        padding-bottom: 0.5rem;
+        padding: 0.75rem 0 0.75rem 1rem;
+        text-transform: uppercase;
+    }
+
+    .panel-Users span.bg-img{
+        background:transparent url("../images/user.png") no-repeat 0 0;    
+    }
+
+    .panel-Merchants span.bg-img {
+        background:transparent url("../images/merchants.png") no-repeat 0 0;
+    }
+
+    .panel-Categories span.bg-img {
+        background:transparent url("../images/categories.png") no-repeat 0 0;
+    }
+
+    .panel-Brands span.bg-img {
+        background:transparent url("../images/brands.png") no-repeat 0 4px;
+    }
+
+    .panel-Coupons span.bg-img {
+        background:transparent url("../images/coupons.png") no-repeat 0 4px;
+    }
+
+    .panel-Deals span.bg-img {
+        background:transparent url("../images/deals.png") no-repeat 0 0;
+    }
+
+    .panel-RequestADeal span.bg-img {
+        background:transparent url("../images/requestADeal.png") no-repeat 0 0;
+    }
+
+    .panel-AddOfferType a {
+        background:transparent url("../images/addOffers.png") no-repeat 65px 12px;
+    }
+
+    .panel-OfferTypeList a {
+        background:transparent url("../images/offerType.png") no-repeat 65px 12px;
+    }
+    
+    .panel-DealsoftheDay span.bg-img {
+        background:transparent url("../images/dealsOfTheDay.png") no-repeat 0 0;
+    }
+
+    .panel-Orders span.bg-img {
+        background:transparent url("../images/orders.png") no-repeat 0 0;
+        margin-left: 12px;
+        padding-left: 48px;
+    }
+    .panel-Invoices span.bg-img {
+        background:transparent url("../images/panel-Invoices.png") no-repeat 0 0;
+    }
+
+    .panel-Reports span.bg-img {
+        background:transparent url("../images/reports.png") no-repeat 0 0;
+    }
+
+    .panel-DealsReport a {
+        background:transparent url("../images/dealsReport.png") no-repeat 65px 12px;
+    }
+
+    .panel-MerchentReport a {
+        background:transparent url("../images/merchentReport.png") no-repeat 65px 12px;
+    }
+
+    .panel-EmailCampaigns span.bg-img {
+        background:transparent url("../images/emailCampaigns.png") no-repeat 0 0;
+    }
+
+    .panel-Approvals span.bg-img {
+        background:transparent url("../images/approvals.png") no-repeat 4px 0;
+    }
+}
+

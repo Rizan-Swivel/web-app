@@ -1,0 +1,1 @@
+export const ProfileState = state  =>  state.profile.userData
