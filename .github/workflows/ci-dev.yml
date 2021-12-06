@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   build:
-    runs-on: macOS 11
+    runs-on: macos-latest
     env: 
       CI: false
     steps:
