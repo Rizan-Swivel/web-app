@@ -99,12 +99,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.13.12",
-    "@babel/preset-react": "^7.13.13",
-    "autoprefixer": "^9.8.6",
-    "postcss-cli": "^7.1.1",
-    "prop-types": "^15.7.2",
-    "react-test-renderer": "^17.0.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+    "@babel/preset-env": "*",
+    "@babel/preset-react": "*",
+    "autoprefixer": "*",
+    "postcss-cli": "*",
+    "prop-types": "*",
+    "react-test-renderer": "*",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@*"
   }
 }
