@@ -30,7 +30,7 @@
     "moment": "*",
     "node-sass": "*",
     "pdf-viewer-reactjs": "*",
-    "postcss": "^8.2.6",
+    "postcss": "*",
     "query-string": "^6.14.1",
     "react": "^16.13.1",
     "react-apexcharts": "^1.3.7",
