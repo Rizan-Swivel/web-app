@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-18.04
     env: 
       CI: false
     steps:
