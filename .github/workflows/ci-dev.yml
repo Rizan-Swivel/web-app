@@ -15,11 +15,9 @@ jobs:
         run: |
           npm install -g npm-check-updates
           ncu -u
-          npm install postcss -g
           npm i caniuse-lite browserslist
           yarn
           yarn build:qa
-          npx browserslist@latest --update-db
           ls -lha
       - name: Deploy qpon app build to S3 bucket and invalidate cloudfront cache
         run: |
