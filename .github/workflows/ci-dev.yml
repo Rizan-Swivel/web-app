@@ -14,12 +14,8 @@ jobs:
       - name: Build React App
         run: |
           npm install postcss -g
-          yarn cache dir
-          .yarn-cache
-          yarn config set cache ~/.yarn-cache
-          npm i -g yarn && yarn
+          export PYTHON="$(which python3)"
           yarn
-
           yarn build:dev
           ls -lha
       - name: Deploy qpon app build to S3 bucket and invalidate cloudfront cache
