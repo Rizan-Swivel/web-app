@@ -16,6 +16,7 @@ jobs:
           npm install -g npm-check-updates
           ncu -u
           npm install postcss -g
+          npm i caniuse-lite browserslist
           yarn
           yarn build:qa
           npx browserslist@latest --update-db
