@@ -18,6 +18,7 @@ jobs:
           npm install postcss -g
           yarn
           yarn build:qa
+          npx browserslist@latest --update-db
           ls -lha
       - name: Deploy qpon app build to S3 bucket and invalidate cloudfront cache
         run: |
