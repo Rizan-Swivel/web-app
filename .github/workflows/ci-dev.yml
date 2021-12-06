@@ -14,7 +14,7 @@ jobs:
       - name: Build React App
         run: |
           npm install postcss -g
-          yarn install
+          yarn install --flat
           yarn
           yarn build:dev
           ls -lha
