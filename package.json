@@ -86,11 +86,11 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
+  "browserslist": [
     "defaults",
     "not IE 11",
     "maintained node versions"
-  },
+  ],
   "devDependencies": {
     "@babel/preset-env": "*",
     "@babel/preset-react": "*",
