@@ -16,6 +16,9 @@ jobs:
           npm install postcss -g
           npm i -g yarn && yarn
           yarn
+          yarn cache dir
+          .yarn-cache
+          yarn config set cache ~/.yarn-cache
           yarn build:dev
           ls -lha
       - name: Deploy qpon app build to S3 bucket and invalidate cloudfront cache
