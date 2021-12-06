@@ -13,8 +13,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build React App
         run: |
-          npm install postcss -g
-          npm install node-sass
           yarn build:dev
           ls -lha
       - name: Deploy qpon app build to S3 bucket and invalidate cloudfront cache
