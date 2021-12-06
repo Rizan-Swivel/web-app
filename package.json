@@ -87,9 +87,7 @@
     "extends": "react-app"
   },
   "browserslist": [
-    "defaults",
-    "not IE 11",
-    "maintained node versions"
+    "defaults"
   ],
   "devDependencies": {
     "@babel/preset-env": "*",
