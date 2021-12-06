@@ -16,6 +16,7 @@ jobs:
           npm install -g npm-check-updates
           ncu -u
           npm i caniuse-lite browserslist
+          yarn install
           yarn
           yarn build:qa
           ls -lha
