@@ -208,7 +208,15 @@ export function* register(api, action) {
 
 export function* addFCMTOKEN(api, action) {
   try {
-     // To do in future
+    const response = yield call(api.firebaseToken, action.token);
+    if (response.ok) {
+      var resp = response.data.data;
+      api.removeNotificationToken();
+      yield put(STARTUPACTIONS.addFcmtokenSuccess(resp));
+    } else {
+      api.removeNotificationToken();
+      yield put(STARTUPACTIONS.addFcmtokenFailure(response.error));
+    }
   } catch (err) {
     console.log(err);
   }

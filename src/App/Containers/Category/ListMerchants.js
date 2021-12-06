@@ -10,7 +10,7 @@ import MerchantsStore from "../Merchants/MerchantsStore";
 import {Link} from "react-router-dom";
 import {get} from "lodash";
 import { useParams } from "react-router-dom";
-import {ucFirst} from "../../Utils/helpers";
+import {dateFromTs, ucFirst} from "../../Utils/helpers";
 import {Pagination} from "../../Components/atoms/Pagination";
 
 function ListMerchants(props) {
@@ -93,6 +93,36 @@ function ListMerchants(props) {
             </Card>
         )
     }
+
+    const renderMerchantCard1 = (item, i) => {
+        return (
+            <Card key={i} type="primary" size="full" className=" bg-white mb-2 h-24 space-y-2 ">
+                <Link
+                    to={{
+                        pathname: "/merchants/view/"+item.id,
+                    }}
+                >
+                    <div className="flex flex-row border-b ">
+                        <div className="flex flex-col w-1/6">
+                            <img
+                                class="w-16 h-16 rounded-full object-cover mr-4 shadow"
+                                src={get(item,'imageUrl')  ? get(item,'imageUrl') : image}
+                                alt="avatar"
+                            />
+                        </div>
+                        <div className="flex flex-col w-5/6">
+                            <div className="flex-row">
+                                <div className="grid grid-cols-3 gap-4 text-black Noto Sans font-weight: 400 text-sm mt-1">
+                                    <div>  { ucFirst(get(item,'name')) }</div>
+                                    <div>  {(get(item,'joinedOn.displayDate'))}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+            </Card>
+        );
+    };
 
     const renderNoRecords = () => {
         return (

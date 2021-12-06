@@ -95,8 +95,8 @@ function Add(props) {
     const onSubmit = data => {
         props.createDeal({
             ...data,
-            validFrom: moment(data.validFrom).valueOf(),
-            expiredOn: moment(data.expiredOn).valueOf(),
+            validFrom: moment().valueOf(data.validFrom),
+            expiredOn: moment().valueOf(data.expiredOn),
             merchantId: userId
         })
     }

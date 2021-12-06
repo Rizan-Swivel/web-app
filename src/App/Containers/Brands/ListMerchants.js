@@ -10,6 +10,7 @@ import MerchantsStore from "../Merchants/MerchantsStore";
 import {Link,useParams} from "react-router-dom";
 import {get} from "lodash";
 import {Pagination} from "../../Components/atoms/Pagination";
+import {ucFirst} from "../../Utils/helpers";
 import {Spinner} from "../../Components/atoms/Spinner"
 
 function ListMerchants(props) {
@@ -67,11 +68,6 @@ function ListMerchants(props) {
     const renderMerchantCard = (item) => {
         return (
             <Card type="primary" size="full" className=" bg-white mb-4">
-                <Link
-                    to={{
-                        pathname: "/merchants/view/"+item.id,
-                    }}
-                  >
                 <div className="flex-grow border-b">
                     <div className="flex">
                         <div className="w-3/12">
@@ -89,18 +85,51 @@ function ListMerchants(props) {
                         </div>                  
                     </div>
                 </div>
-                </Link>
             </Card>
         )
     }
-  
+
+    const renderMerchantCard111 = (item, i) => {
+        return (
+            <Card key={i} type="primary" size="full" className=" bg-white mb-2 h-24 space-y-2 ">
+                <Link
+                    to={{
+                        pathname: "/merchants/view/"+item.id,
+                    }}
+                >
+                    <div className="flex flex-row border-b ">
+                        <div className="flex flex-col w-1/6">
+                            <img
+                                class="w-16 h-16 rounded-full object-cover mr-4 shadow"
+                                src={get(item,'imageUrl')  ? get(item,'imageUrl') : image}
+                                alt="avatar"
+                            />
+                        </div>
+                        <div className="flex flex-col w-5/6">
+                            <div className="flex-row mt-2.5 ">
+                                <Typography color="primary" type="h4">
+                                    {get(item,'name')}
+                                </Typography>
+                            </div>
+                            <div className="flex-row">
+                                <div className="grid grid-cols-3 gap-4 text-black Noto Sans font-weight: 400 text-sm mt-1">
+                                    <div>  {t("merchant.approvelStatus")} : { ucFirst(get(item,'approvalStatus')) }</div>
+                                    <div>  {t("common.joinedOn")} : {(get(item,'joinedOn.displayDate'))}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+            </Card>
+        );
+    };
 
     const renderNoRecords = () => {
         return (
             <Card type="primary" size="full" className=" bg-white mb-2">
                 <div className="w-3/12">
                     <Typography color="primary" type="h4">
-                        <Spinner type={"ClipLoader"}/>
+                             <Spinner type={"ClipLoader"}/>
                     </Typography>
                 </div>
             </Card>
