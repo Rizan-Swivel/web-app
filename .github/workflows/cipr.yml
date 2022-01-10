@@ -1,0 +1,18 @@
+name: s3-deployment-development
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: 	ubuntu-latest
+    env: 
+      CI: false
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build React App
+        run: |
+          yarn
+          yarn build:qa
+          ls -lha
