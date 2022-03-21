@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@v1.1.0
-      with:
-        host: https://sonarqube.qpon.lk
-        login: 335df1130852aabd9095b2a841f6206076904f1d
-        projectKey: "web-app"
-        projectName: "web-app"
-        #projectBaseDir: "/web-app/src/"
+    - name: Setup sonarqube
+      uses: warchant/setup-sonar-scanner@v3
+    - name: Run sonarqube
+      run: sonar-scanner
+           -Dsonar.organization=web-app 
+           -Dsonar.projectKey=web-app
+           -Dsonar.sources=$GITHUB_WORKSPACE 
+           -Dsonar.host.url=https://sonarqube.qpon.lk
+           -Dsonar.login=335df1130852aabd9095b2a841f6206076904f1d
