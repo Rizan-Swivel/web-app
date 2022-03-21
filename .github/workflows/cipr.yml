@@ -3,7 +3,7 @@ name: s3-deployment-development
 on:
   push:
     branches:
-      - main
+      - mainX
 jobs:
   build:
     runs-on: 	ubuntu-latest
