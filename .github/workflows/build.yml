@@ -17,3 +17,4 @@ jobs:
         login: 335df1130852aabd9095b2a841f6206076904f1d
         projectKey: "web-app"
         projectName: "web-app"
+        projectBaseDir: "/web-app/src/"
