@@ -3,7 +3,7 @@ name: s3-deployment-qa
 on:
   push:
     branches:
-      - 3.0RC
+      - 3.0RCX
 jobs:
   build:
     runs-on: ubuntu-latest
