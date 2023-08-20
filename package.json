@@ -21,7 +21,7 @@
     "chart.js": "^2.9.3",
     "connected-react-router": "^6.8.0",
     "env-cmd": "^10.1.0",
-    "firebase": "^7.20.0",
+    "firebase": "^10.2.0",
     "formik": "^2.2.9",
     "i18next": "^19.9.1",
     "i18next-browser-languagedetector": "^6.0.1",
